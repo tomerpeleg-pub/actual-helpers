@@ -39,7 +39,7 @@ function daysInYear(year) {
         cutoff.setMonth(cutoff.getMonth() - 1);
         cutoff.setDate(cutoff.getDate() + 1);
 
-        const lastDate = await getLastTransactionDate(account, cutoff);
+        const lastDate = await getLastTransactionDate(account, cutoff, true);
         if (!lastDate) continue;
         const daysPassed = Math.floor((interestTransactionDate - new Date(lastDate)) / 86400000);
 
